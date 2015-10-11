@@ -1,20 +1,5 @@
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-      </h1>
-      <h3>
-      <%= @user.name %><br>
-      </h3>
-      <div>
-        <%= @user.email %><br>
-        <%= @user.company %><br>
-        <%= @user.biography %><br>
-        <%= link_to "edit your profile", edit_user_path(@user.id) %>
-      </div>
-    </section>
-  </aside>
+  <%= render 'profile' %>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>

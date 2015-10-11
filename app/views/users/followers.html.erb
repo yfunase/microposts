@@ -1,0 +1,21 @@
+<div class="row">
+  <%= render 'profile' %>
+  <div class="col-md-8">
+    <h3>
+        Followers
+    </h3>
+    <div>
+    <ul>
+        <% @followers.each do |user| %>
+          <li class="no-dot-list">
+              <div>
+              <span><%= link_to gravatar_for(user, size: 50), user %></span>
+              <%= link_to user.name, user %><br>
+              <%= user.biography %>
+              </div>
+          </li>
+        <% end %>
+        </ul>
+    </div>
+  </div>
+</div>
